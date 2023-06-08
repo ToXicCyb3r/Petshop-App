@@ -15,14 +15,6 @@ class HomeScreen extends StatelessWidget {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
     CollectionReference products = firestore.collection('products');
     return Scaffold(
-      bottomNavigationBar: const GNav(tabs: [
-        GButton(icon: Icons.home,
-        text: 'Home',),
-        GButton(icon: Icons.search,
-            text: 'Find',),
-        GButton(icon: Icons.person,
-            text: 'Profil',),
-      ],),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(
