@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:petshop/screens/theme.dart';
 import 'package:petshop/widgets/petshop_card.dart';
 import 'package:petshop/models/menu.dart';
@@ -14,6 +15,14 @@ class HomeScreen extends StatelessWidget {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
     CollectionReference products = firestore.collection('products');
     return Scaffold(
+      bottomNavigationBar: const GNav(tabs: [
+        GButton(icon: Icons.home,
+        text: 'Home',),
+        GButton(icon: Icons.search,
+            text: 'Find',),
+        GButton(icon: Icons.person,
+            text: 'Profil',),
+      ],),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(
