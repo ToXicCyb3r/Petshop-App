@@ -14,13 +14,14 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    launchUrl(String url) async {
+    Uri whatsapp = Uri.parse('https://wa.me/082186933355');
+    //launchUrl(String url) async {
       // ignore: deprecated_member_use
-      if (await canLaunch(url)) {
+    //  if (await canLaunch(url)) {
         // ignore: deprecated_member_use
-        await launch(url);
-      }
-    }
+    //    await launch(url);
+     // }
+    //}
 
     return Scaffold(
       body: SafeArea(
@@ -105,6 +106,17 @@ class DetailScreen extends StatelessWidget {
                                 color: blackColor,
                               ),
                             ),
+
+                            GestureDetector(
+                              onTap: (() async {
+                                launchUrl(whatsapp);
+                              }),
+                              child: Icon(
+                                Icons.phone,
+                                size: 20,
+                                color: Colors.green,
+                              ),
+                            ),
                             const SizedBox(
                               height: 18,
                             ),
@@ -148,7 +160,7 @@ class DetailScreen extends StatelessWidget {
                             InkWell(
                               onTap: () {
                                 launchUrl(
-                                    "https://goo.gl/maps/vDERRGt9WwtWMso87?coh=178571&entry=tt");
+                                    "https://goo.gl/maps/vDERRGt9WwtWMso87?coh=178571&entry=tt" as Uri);
                               },
                               child: Row(
                                 children: [

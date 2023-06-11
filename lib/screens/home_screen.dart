@@ -4,6 +4,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:petshop/screens/theme.dart';
 import 'package:petshop/widgets/petshop_card.dart';
 import 'package:petshop/models/menu.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,6 +13,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String email = Uri.encodeComponent("mail@fluttercampus.com");
+    String subject = Uri.encodeComponent("Pengajuan Toko");
+    String body = Uri.encodeComponent("Hi! Saya ingin mengajukan toko");
+    Uri mail = Uri.parse("mailto:$email?subject=$subject&body=$body");
+
     FirebaseFirestore firestore = FirebaseFirestore.instance;
     CollectionReference products = firestore.collection('products');
     return Scaffold(
@@ -33,11 +39,30 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Text(
-                'Selamat Datang Di Petshop App',
+                'Selamat Datang Di Petshop App.',
                 style: poppinsTextStyle.copyWith(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
                   color: greyColor,
+                ),
+              ),
+              Text(
+                    'Jika Tokomu ingin kami promosikan,'
+                    ' Hubungi blabla@gmail.com',
+                style: poppinsTextStyle.copyWith(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  color: greyColor,
+                ),
+              ),
+              GestureDetector(
+                onTap: (() async {
+                  launchUrl(mail);
+                }),
+                child: Icon(
+                  Icons.email,
+                  size: 10,
+                  color: Colors.blue,
                 ),
               ),
               const SizedBox(

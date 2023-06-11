@@ -40,8 +40,8 @@ file:///home/fikri/.pub-cache/hosted/pub.dev/crypto-3.0.3/
 file:///home/fikri/.pub-cache/hosted/pub.dev/crypto-3.0.3/lib/
 csslib
 2.19
-file:///home/fikri/.pub-cache/hosted/pub.dev/csslib-0.17.3/
-file:///home/fikri/.pub-cache/hosted/pub.dev/csslib-0.17.3/lib/
+file:///home/fikri/.pub-cache/hosted/pub.dev/csslib-1.0.0/
+file:///home/fikri/.pub-cache/hosted/pub.dev/csslib-1.0.0/lib/
 cupertino_icons
 2.12
 file:///home/fikri/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.5/
@@ -111,9 +111,9 @@ google_nav_bar
 file:///home/fikri/.pub-cache/hosted/pub.dev/google_nav_bar-5.0.6/
 file:///home/fikri/.pub-cache/hosted/pub.dev/google_nav_bar-5.0.6/lib/
 html
-2.17
-file:///home/fikri/.pub-cache/hosted/pub.dev/html-0.15.3/
-file:///home/fikri/.pub-cache/hosted/pub.dev/html-0.15.3/lib/
+2.19
+file:///home/fikri/.pub-cache/hosted/pub.dev/html-0.15.4/
+file:///home/fikri/.pub-cache/hosted/pub.dev/html-0.15.4/lib/
 http
 3.0
 file:///home/fikri/.pub-cache/hosted/pub.dev/http-1.0.0/

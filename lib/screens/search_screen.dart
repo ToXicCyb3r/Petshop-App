@@ -9,7 +9,7 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen>{
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(10),
         child: Column(children: [
@@ -17,7 +17,12 @@ class _SearchScreenState extends State<SearchScreen>{
             decoration: InputDecoration(
               labelText: 'SEARCH', suffix: Icon(Icons.search)
             ),
-          )
+          ),
+          ListView.builder(itemBuilder: (BuildContext context, int index) {
+
+          },
+
+          ),
         ],),
       ),
     );
