@@ -13,10 +13,25 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String email = Uri.encodeComponent("mail@fluttercampus.com");
-    String subject = Uri.encodeComponent("Pengajuan Toko");
-    String body = Uri.encodeComponent("Hi! Saya ingin mengajukan toko");
-    Uri mail = Uri.parse("mailto:$email?subject=$subject&body=$body");
+    //String email = Uri.encodeComponent("mail@fluttercampus.com");
+    //String subject = Uri.encodeComponent("Pengajuan Toko");
+   // String body = Uri.encodeComponent("Hi! Saya ingin mengajukan toko");
+   // Uri mail = Uri.parse("mailto:$email?subject=$subject&body=$body");
+    
+    String? encodeQueryParameters(Map<String, String> params){
+      return params.entries
+          .map((MapEntry<String, String> e) =>
+      '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+          .join('&');
+    }
+    Uri emailUri = Uri(
+      scheme: 'mailto',
+      path: 'naufalfikriansyah99@gmail.com',
+      query: encodeQueryParameters(<String, String>{
+        'subject': 'Pengajuan Toko',
+        'body': 'Saya ingin mengajukan toko',
+      })
+    );
 
     FirebaseFirestore firestore = FirebaseFirestore.instance;
     CollectionReference products = firestore.collection('products');
@@ -57,7 +72,7 @@ class HomeScreen extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: (() async {
-                  launchUrl(mail);
+                  launchUrl(emailUri);
                 }),
                 child: Icon(
                   Icons.email,
